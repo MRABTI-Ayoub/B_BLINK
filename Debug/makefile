@@ -48,9 +48,7 @@ CFLAGS += -DSTM32F429ZITX
 # Options du linker
 LD := $(CC)
 LDFLAGS := -Wl,-Map=BLINKGIO14.map -Wl,--gc-sections
-LDFLAGS := -Wl,-Map=BLINKGIO14.map -Wl,--gc-sections -T STM32F429ZITX_FLASH.ld
-
-
+LDFLAGS += -T/home/ayoub/STM32CubeIDE/workspace_1.15.1/BLINKGIO14/STM32F429ZITX_FLASH.ld
 
 # Répertoires des sources
 SRCDIRS := Core/Src Core/Startup Drivers/STM32F4xx_HAL_Driver/Src
@@ -109,4 +107,3 @@ warn-no-linker-script-specified:
 
 # Inclusion des cibles spécifiques de l'utilisateur
 -include ../makefile.targets
-
