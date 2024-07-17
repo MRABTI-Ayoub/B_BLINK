@@ -48,7 +48,8 @@ CFLAGS += -DSTM32F429ZITX
 # Options du linker
 LD := $(CC)
 LDFLAGS := -Wl,-Map=BLINKGIO14.map -Wl,--gc-sections
-LDFLAGS := -Wl,-Map=BLINKGIO14.map -Wl,--gc-sections -T/home/ayoub/STM32CubeIDE/workspace_1.15.1/BLINKGIO14/STM32F429ZITX_FLASH.ld
+LDFLAGS := -Wl,-Map=BLINKGIO14.map -Wl,--gc-sections -T STM32F429ZITX_FLASH.ld
+
 
 
 # Répertoires des sources
