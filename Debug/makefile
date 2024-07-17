@@ -48,8 +48,7 @@ CFLAGS += -DSTM32F429ZITX
 # Options du linker
 LD := $(CC)
 LDFLAGS := -Wl,-Map=BLINKGIO14.map -Wl,--gc-sections
-LDFLAGS := -Wl,-Map=BLINKGIO14.map -Wl,--gc-sections -T/home/ayoub/STM32CubeIDE/workspace_1.15.1/BLINKGIO14/STM32F429ZITX_FLASH.ld
-
+LDFLAGS += -T/home/ayoub/STM32CubeIDE/workspace_1.15.1/BLINKGIO14/STM32F429ZITX_FLASH.ld
 
 # Répertoires des sources
 SRCDIRS := Core/Src Core/Startup Drivers/STM32F4xx_HAL_Driver/Src
@@ -89,7 +88,7 @@ BLINKGIO14.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
 # Nettoyage des artefacts de build
 clean:
 	-$(RM) $(BUILD_ARTIFACT) $(MAP_FILES) $(SIZE_OUTPUT) $(OBJDUMP_LIST) BLINKGIO14.bin
-	-@echo ' '
+	-@echo 'Cleaned up the project.'
 
 # Cibles secondaires : gestion des sorties secondaires
 secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST)
@@ -108,3 +107,4 @@ warn-no-linker-script-specified:
 
 # Inclusion des cibles spécifiques de l'utilisateur
 -include ../makefile.targets
+
